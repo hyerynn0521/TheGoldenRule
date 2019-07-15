@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- link is for css -->
+    <link rel="stylesheet" href="TheGoldenRule.css"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body {font-family: Roman; background-color: #defcfc; }
+  #title {font-family: cursive; font-size: 75px; }
+  #welcome {font-size: 27px;}
+  #msg {font-size: 20px;}
+  span {color: gold;}
+
+  /* div #CRText {
+    margin: 20px;
+  }
+
+  div #PRText {
+    margin: 20px;
+  } */
+
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #a6e3e9;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #fbfbfb;
+  }
+
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ffe6eb;
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  </style>
+  </head>
+
+  <body>
+    <!-- script is for js -->
+    <script type="text/javascript" src="TheGoldenRule.js">
+    </script>
+
+  <h1 id ="title"><center>The <span>Golden</span> Rule</center></h1>
+  <h3 id="welcome">Welcome!</h3>
+  <p id="msg">This is a safe space for you to share your thoughts and feelings with our community and creators! Remember that the <em>Golden Rule</em> is to respect each other's opinions... and mind ya own business:3</p>
+
+  <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'Chat Room')">Chat Room</button>
+    <button class="tablinks" onclick="openCity(event, 'Private Chat')">Private Chat</button>
+    <button class="tablinks" onclick="openCity(event, 'Contact')">Contact</button>
+  </div>
+
+
+  <div id="Chat Room" class="tabcontent">
+    <h3>Chat Room</h3>
+    <p>Welcome to the public Chat Room!</p>
+    <h2>Comments</h2>
+    <br>
+    <p class="chat1"></p>
+    <!-- <div id="CRText" class="chat1.5"></div> -->
+    <p> <form action="/action_page.php" id="usrform">
+    Name: <input class = "name1" type="text" name="usrname1">
+    <button type="button" onclick='updateChatRoom()'>Submit</button>
+    </form>
+    <br>
+    <textarea class="texty1" rows="4" cols="50" name="comment" form="usrform">
+    Enter text here...</textarea>
+  </div>
+
+
+  <div id="Private Chat" class="tabcontent">
+    <h3>Private Chat</h3>
+    <p>Welcome to your own private chat room with the creators of the website!</p>
+    <h2>comments:</h2>
+    <br>
+    <p class="chat2"></p>
+    <p><form action="/action_page.php" id="usrform">
+        Name: <input class = "name2" type="text" name="usrname2">
+        <button type="button" onclick="updatePrivRoom()">Submit</button>
+      </form>
+      <br>
+      <textarea class="texty2" rows="4" cols="50" name="comment" form="usrform">
+      Enter text here...</textarea>
+
+    <br>
+  </div>
+
+  <div id="Contact" class="tabcontent">
+    <h3>Contact</h3>
+    <p>Here is the contact information for Lex & Kendra!</p>
+    <p>Lex's Contact: </p>
+    <a href="mailto:lex.co47@gmail.com">Gmail</a>
+    <br>
+    <p>Kendra's Contact: </p>
+    <a href="mailto:kenugent02@gmail.com">Gmail</a>
+    <br>
+    <br>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Have a complaint? Click here to be redirected to our customer service.</a>
+  </div>
+
+  <script>
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script>
+
+
+  </body>
+</html>
